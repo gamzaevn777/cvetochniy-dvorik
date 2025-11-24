@@ -1,0 +1,437 @@
+/* --- Глобальные Стили и Сброс --- */
+:root {
+    --primary-color: #ce00a1; /* ИЗМЕНЕНО: Сиреневый для кнопок, шапки и акцентов */
+    --accent-color: #ff52d9; /* ИЗМЕНЕНО: Светло-розовый для наведения (hover) */
+    --light-bg: #f7f7f7;
+    --text-color-dark: #333333; /* Дополнительная переменная для темного текста */
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: var(--text-color-dark); /* ИСПРАВЛЕНО: основной текст темный */
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: 500;
+    text-align: center;
+    color: #000000; /* Черный для лучшего контраста на белом фоне */
+    letter-spacing: 5px; 
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    margin: 0; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.top-margin {
+    margin-top: 40px;
+}
+
+/* --- Кнопки (Buttons) и Шапка (Header) --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 0; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color); /* Сиреневый */
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color); /* Розовый */
+    border-color: var(--accent-color);
+}
+
+.btn-hero { /* Стили для кнопки на видеофоне */
+    margin-top: 40px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-hero:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Чуть больше затемнения на видео */
+}
+
+header {
+    background-color: var(--primary-color); /* ИЗМЕНЕНО: Основной сиреневый фон */
+    border-bottom: 1px solid var(--primary-color); 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo-image img {
+    width: 200px; /* УСТАНОВЛЕНО: Ширина 300px */
+    height: auto; /* Высота будет автоматически рассчитана, чтобы сохранить пропорции */
+    display: block; 
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li a {
+    color: white; /* ИСПРАВЛЕНО: Ссылки белые на сиреневой шапке */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 400;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color); /* Розовый при наведении */
+}
+
+/* ========================================= */
+/* --- НОВАЯ ГЛАВНАЯ СЕКЦИЯ: ВИДЕОФОН --- */
+/* ========================================= */
+.video-hero {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Высота секции */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Центрируем контент по вертикали */
+    justify-content: center; /* Центрируем контент по горизонтали */
+    text-align: center;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Заполняет весь контейнер */
+}
+
+/* Слой-затемнение для контраста */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный цвет */
+    z-index: 2;
+}
+
+/* Контейнер для текста */
+.hero-text-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.video-hero-title {
+    font-size: 4em; /* Крупный заголовок */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень для лучшей читаемости */
+}
+
+.video-hero-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.about-section-minimal {
+    background-color: white; /* Светлый фон */
+    padding-top: 50px; /* Немного уменьшим верхний отступ, чтобы не было слишком пусто */
+}
+
+.about-text-mission {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.about-text-mission p {
+    margin-bottom: 20px;
+}
+
+/* Блок с ключевыми фактами */
+.key-facts {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    border-top: 1px solid var(--light-bg);
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.fact-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.fact-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color); /* Сиреневый для акцента */
+    line-height: 1.1;
+}
+
+.fact-label {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #777;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 600px) {
+    .key-facts {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .logo-image img {
+        width: 130px; /* Уменьшаем ширину логотипа на телефонах */
+        height: auto;
+    }
+}
+
+/* ========================================= */
+/* --- СЕКЦИЯ АССОРТИМЕНТА (с фоновыми фото) --- */
+/* ========================================= */
+
+.assortment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* Отступы между карточками */
+}
+
+.assortment-card {
+    position: relative;
+    overflow: hidden;
+    height: 200px; /* Высота карточки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Цвет текста поверх фото */
+    font-weight: 500;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-size: cover; /* Фото полностью заполняет фон */
+    background-position: center; /* Центрируем фото */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px; /* Небольшое скругление */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Слой-наложение для лучшей читаемости текста */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный */
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.assortment-card h4 {
+    position: relative; 
+    z-index: 2;
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.4em;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
+    font-weight: 500;
+}
+
+/* Эффект наведения */
+.assortment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.assortment-card:hover .card-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Темнее при наведении */
+}
+
+
+/* УНИКАЛЬНЫЕ ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ КАЖДОЙ КАРТОЧКИ */
+.card-roses { background-image: url('assortment_images/roses.jpg'); }
+.card-tulips { background-image: url('assortment_images/tulips.jpg'); }
+.card-chrysanthemum { background-image: url('assortment_images/chrysanthemum.jpg'); }
+.card-peonies { background-image: url('assortment_images/peonies.jpg'); }
+.card-hydrangeas { background-image: url('assortment_images/hydrangeas.jpg'); }
+.card-pots { background-image: url('assortment_images/pots.jpg'); }
+.card-oasis { background-image: url('assortment_images/oasis.jpg'); }
+.card-packaging { background-image: url('assortment_images/packaging.jpg'); }
+.card-decor { background-image: url('assortment_images/decor.jpg'); }
+
+
+/* Адаптивность для блока ассортимента */
+@media (max-width: 900px) {
+    .assortment-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на средних экранах */
+    }
+}
+@media (max-width: 600px) {
+    .assortment-grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        gap: 10px;
+    }
+    .assortment-card {
+        height: 160px; /* Меньше высота карточки на мобильных */
+    }
+    .assortment-card h4 {
+        font-size: 1.2em;
+    }
+}
+
+/* --- Блок Контактов и Карта --- */
+.contact-map-box {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info-minimal {
+    flex: 1;
+    padding: 20px;
+    font-size: 1.4em;
+}
+
+.info-line {
+    margin: 15px 0 5px 0;
+    font-weight: 700;
+    color: var(--primary-color); /* Сиреневый для акцента */
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.contact-info-minimal p {
+    margin: 5px 0;
+}
+
+.email-link {
+    color: var(--primary-color); /* Сиреневый для ссылок */
+    text-decoration: none;
+}
+
+.note-text {
+    margin-top: 30px;
+    color: #999;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.map-500 {
+    width: 500px;
+    height: 500px;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+}
+
+.map-500 iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
+/* --- Подвал и Медиа-запросы (Адаптивность) --- */
+footer {
+    background-color: #000000; /* ИСПРАВЛЕНО: Черный подвал */
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .contact-map-box {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .map-500 {
+        width: 100%; 
+        height: 350px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .assortment-grid {
+        grid-template-columns: 1fr; 
+    }
+    .assortment-card {
+        height: 80px;
+    }
+    .video-hero-title {
+        font-size: 2.2em; /* Меньше на мобильных */
+    }
+    .video-hero {
+        height: 400px; /* Меньше высота на мобильных */
+    }
+}
